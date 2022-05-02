@@ -1,1 +1,1 @@
-755f83cea2c5ab6e8572c456fa144e1679db104328751ed66afcf3da6027a6be  ./target/wasm32-unknown-unknown/release/clicker.wasm
+ff8e5820251f146298e09527e95f504c8f37690dab8f9231fed8ce07780cd069  ./target/wasm32-unknown-unknown/release/clicker.wasm

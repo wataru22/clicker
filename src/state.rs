@@ -7,8 +7,9 @@ use cw_storage_plus::Item;
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct State {
     pub lucky_number: i32,
-    // pub lucky_string: char,
     pub owner: Addr,
+    // Here's the vector!
+    pub scores: Vec<(Addr, u16)>,
 }
 
-pub const STATE: Item<State> = Item::new("state");
+pub const STORAGE: Item<State> = Item::new("state");
