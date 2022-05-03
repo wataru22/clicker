@@ -6,13 +6,18 @@ use cw2::set_contract_version;
 
 use crate::error::ContractError;
 // We're adding InstantiateMsg and QueryMsg
-use crate::msg::{LuckyNumberResponse, InstantiateMsg, QueryMsg, ExecuteMsg, ScoreResponse};
+use crate::msg::{LuckyNumberResponse, InstantiateMsg, QueryMsg, ExecuteMsg, ScoreResponse, MigrateMsg};
 // rename update STATE -> STORAGE
 use crate::state::{State, STORAGE};
 
 // version info for migration info
 const CONTRACT_NAME: &str = "crates.io:clicker";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
+
+#[cfg_attr(not(feature = "library"), entry_point)]
+pub fn migrate(_deps: DepsMut, _env: Env, _msg: MigrateMsg) -> StdResult<Response> {
+    Ok(Response::default())
+}
 
 #[cfg_attr(not(feature = "library"), entry_point)]
 pub fn instantiate(
